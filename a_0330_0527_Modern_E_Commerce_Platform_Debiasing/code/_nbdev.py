@@ -2,16 +2,10 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"trace": "3_model_new.ipynb",
-         "recall_from_user_item_matr": "3_model_new.ipynb",
-         "recall_from_cocur_matr": "3_model_new.ipynb",
-         "parser": "3_model_new.ipynb",
-         "args": "3_model_new.ipynb",
-         "whole_click": "3_model_new.ipynb",
-         "save_dir": "3_model_new.ipynb",
-         "sr1": "3_model_new.ipynb"}
+index = {"DATA_DIR": "0EDA.ipynb",
+         "load_whole_click_data": "0EDA.ipynb"}
 
-modules = ["train.py"]
+modules = ["eda.py"]
 
 doc_url = "https://ian.github.io/code/"
 
