@@ -47,7 +47,7 @@ def explain(model,df_predict,cat_cols,dfr):
     dfs_T=dfs.T
     ss=[]
     for i in range(dfs_T.shape[1]):
-    ss.append(dfs_T.iloc[:,i].copy().sort_values(ascending=False).iloc[:5])
+        ss.append(dfs_T.iloc[:,i].copy().sort_values(ascending=False).iloc[:5])
     count=0
     rr=[]
     for line in dfr[dfr.predict_label==1].itertuples():

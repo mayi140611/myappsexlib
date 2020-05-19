@@ -12,7 +12,13 @@ from tqdm import tqdm
 
 # Cell
 
-def build_co_occurance_matrix(items_list, window=9999,penalty1=False,penalty2=False,penalty3=1, save_dir=None):
+def build_co_occurance_matrix(items_list,
+                              window=9999,
+                              penalty1=False,
+                              penalty2=False,
+                              penalty3=1,
+                              penalty4=False,
+                              save_dir=None):
     """
 
     :items_list:
@@ -30,12 +36,18 @@ def build_co_occurance_matrix(items_list, window=9999,penalty1=False,penalty2=Fa
     : penalty3: float
         对seq方向惩罚，方向为正 不惩罚，否则惩罚
         1表示不惩罚
+    : penalty4:
+        对item出现次数做惩罚，出现越多，对共现的价值越小
+
     :return:
 
 
     """
+    from collections import Counter
+    item_list_flat = [ii for i in items_list for ii in i]
+    item_num_dict = dict(Counter(item_list_flat))  # 每个item出现次数的字典
 
-    items = pd.Series(list(set([ii for i in items_list for ii in i])))
+    items = pd.Series(list(item_num_dict.keys()))
     item2id = pd.Series(items.index, items)
 
     n_items = items.shape[0]
@@ -48,12 +60,17 @@ def build_co_occurance_matrix(items_list, window=9999,penalty1=False,penalty2=Fa
                 if (item != related_item) and (distance<window):
                     vt = 1
                     if penalty1:
-                        vt /= np.log2(distance+1)
+                        vt /= np.sqrt(np.log2(distance+1))
                     if penalty2:
-                        vt /= np.log2(len(items_)+1)
+                        vt /= np.log10(len(items_)+9)
                     if i < j:
                         vt *= penalty3
                     train_data_matrix[item2id.loc[item], item2id.loc[related_item]] += vt
+    if penalty4:
+        for r in tqdm(range(train_data_matrix.shape[0])):
+            for c in train_data_matrix.rows[r]:
+                train_data_matrix[r,c] /= (np.log(item_num_dict[items[r]]+1)*np.log(item_num_dict[items[c]]+1))
+
     if save_dir:
         if not os.path.exists(save_dir):
             print(f'create matrix dir {save_dir}')
