@@ -11,12 +11,19 @@ index = {"say_hello": "engineering_nbdev.ipynb",
          "load_co_occurance_matrix": "algo_rs_matrix.ipynb",
          "build_user_item_matrix": "algo_rs_matrix.ipynb",
          "build_item_item_cosine_matrix": "algo_rs_matrix.ipynb",
-         "HelloSayer": "engineering_nbdev.ipynb"}
+         "ClockProcess": "engineering_concurrency.ipynb",
+         "ClockThread": "engineering_concurrency.ipynb",
+         "HelloSayer": "engineering_nbdev.ipynb",
+         "write2json_file": "utils_json.ipynb",
+         "read_from_json_file": "utils_json.ipynb"}
 
 modules = ["engineering/nbdev.py",
            "algo/ml/shallow/tree/catboost.py",
            "rs/associated_rules.py",
-           "algo/rs/matrix.py"]
+           "algo/rs/matrix.py",
+           "algo/rs/search/vector/faiss.py",
+           "engineering/concurrency.py",
+           "utils/json.py"]
 
 doc_url = "https://ian.github.io/mylib/"
 
