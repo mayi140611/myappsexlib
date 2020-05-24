@@ -2,7 +2,7 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"say_hello": "engineering_nbdev.ipynb",
+index = {"say_hello": "engineering_snorkel.ipynb",
          "val": "algo_ml_shallow_tree_catboost.ipynb",
          "predict": "algo_ml_shallow_tree_catboost.ipynb",
          "explain": "algo_ml_shallow_tree_catboost.ipynb",
@@ -15,7 +15,8 @@ index = {"say_hello": "engineering_nbdev.ipynb",
          "ClockThread": "engineering_concurrency.ipynb",
          "HelloSayer": "engineering_nbdev.ipynb",
          "write2json_file": "utils_json.ipynb",
-         "read_from_json_file": "utils_json.ipynb"}
+         "read_from_json_file": "utils_json.ipynb",
+         "PickleWrapper": "utils_pickle.ipynb"}
 
 modules = ["engineering/nbdev.py",
            "algo/ml/shallow/tree/catboost.py",
@@ -23,7 +24,9 @@ modules = ["engineering/nbdev.py",
            "algo/rs/matrix.py",
            "algo/rs/search/vector/faiss.py",
            "engineering/concurrency.py",
-           "utils/json.py"]
+           "engineering/snorkel.py",
+           "utils/json.py",
+           "utils/pickle.py"]
 
 doc_url = "https://ian.github.io/mylib/"
 

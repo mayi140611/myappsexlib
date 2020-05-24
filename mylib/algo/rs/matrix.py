@@ -43,7 +43,11 @@ def build_co_occurance_matrix(items_list,
 
 
     """
+    from multiprocessing.dummy import Pool, Lock
     from collections import Counter
+
+    pool = Pool()
+    mutex = Lock()
     item_list_flat = [ii for i in items_list for ii in i]
     item_num_dict = dict(Counter(item_list_flat))  # 每个item出现次数的字典
 
@@ -53,24 +57,34 @@ def build_co_occurance_matrix(items_list,
     n_items = items.shape[0]
     print(f'n_items: {n_items}')
     train_data_matrix = sp.lil_matrix((n_items, n_items), dtype=np.float)
-    for items_ in tqdm(items_list):
+    def t(items_):
+#     for items_ in tqdm(items_list):
         for i, item in enumerate(items_):
             for j, related_item in enumerate(items_):
                 distance = np.abs(i-j)
                 if (item != related_item) and (distance<window):
                     vt = 1
                     if penalty1:
+#                         print('对距离惩罚，距离越远，相关性越小...')
                         vt /= np.sqrt(np.log2(distance+1))
                     if penalty2:
+#                         print('对list长度惩罚，长度越长，对共现的价值越小...')
                         vt /= np.log10(len(items_)+9)
                     if i < j:
                         vt *= penalty3
+                    mutex.acquire()
                     train_data_matrix[item2id.loc[item], item2id.loc[related_item]] += vt
+                    mutex.release()
+    pool.map(t, items_list)
     if penalty4:
-        for r in tqdm(range(train_data_matrix.shape[0])):
+        print('对item出现次数做惩罚...')
+        def t(r):
+#         for r in tqdm(range(train_data_matrix.shape[0])):
             for c in train_data_matrix.rows[r]:
+                mutex.acquire()
                 train_data_matrix[r,c] /= (np.log(item_num_dict[items[r]]+1)*np.log(item_num_dict[items[c]]+1))
-
+                mutex.release()
+        pool.map(t, range(train_data_matrix.shape[0]))
     if save_dir:
         if not os.path.exists(save_dir):
             print(f'create matrix dir {save_dir}')

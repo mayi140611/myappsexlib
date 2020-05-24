@@ -5,11 +5,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"get_user_data": "0EDA.ipynb",
          "get_item_data": "0EDA.ipynb",
          "load_whole_click_data": "0EDA.ipynb",
-         "parser": "config.ipynb",
-         "args": "config.ipynb"}
+         "load_click_data_per_phase": "0EDA.ipynb"}
 
-modules = ["eda.py",
-           "config.py"]
+modules = ["eda.py"]
 
 doc_url = "https://ian.github.io/code/"
 
