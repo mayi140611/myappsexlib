@@ -2,10 +2,17 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"say_hello": "engineering_snorkel.ipynb",
-         "val": "algo_ml_shallow_tree_catboost.ipynb",
-         "predict": "algo_ml_shallow_tree_catboost.ipynb",
-         "explain": "algo_ml_shallow_tree_catboost.ipynb",
+index = {"say_hello": "utils_functools.ipynb",
+         "alibox": "active_learning.ipynb",
+         "model": "active_learning.ipynb",
+         "stopping_criterion": "active_learning.ipynb",
+         "QBCStrategy": "active_learning.ipynb",
+         "QBC_result": "active_learning.ipynb",
+         "analyser": "active_learning.ipynb",
+         "describe": "algo_ml_eda.ipynb",
+         "val": "algo_ml_tree_catboost.ipynb",
+         "predict": "algo_ml_tree_catboost.ipynb",
+         "explain": "algo_ml_tree_catboost.ipynb",
          "Apriori": "algo_rs_associated_rules.ipynb",
          "build_co_occurance_matrix": "algo_rs_matrix.ipynb",
          "load_co_occurance_matrix": "algo_rs_matrix.ipynb",
@@ -19,12 +26,15 @@ index = {"say_hello": "engineering_snorkel.ipynb",
          "PickleWrapper": "utils_pickle.ipynb"}
 
 modules = ["engineering/nbdev.py",
-           "algo/ml/shallow/tree/catboost.py",
+           "active_learning.py",
+           "algo/ml/eda.py",
+           "algo/ml/tree/catboost.py",
            "rs/associated_rules.py",
            "algo/rs/matrix.py",
            "algo/rs/search/vector/faiss.py",
            "engineering/concurrency.py",
            "engineering/snorkel.py",
+           "utils/functools.py",
            "utils/json.py",
            "utils/pickle.py"]
 
