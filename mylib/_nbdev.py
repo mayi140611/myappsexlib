@@ -23,7 +23,8 @@ index = {"say_hello": "utils_functools.ipynb",
          "HelloSayer": "engineering_nbdev.ipynb",
          "write2json_file": "utils_json.ipynb",
          "read_from_json_file": "utils_json.ipynb",
-         "PickleWrapper": "utils_pickle.ipynb"}
+         "PickleWrapper": "utils_pickle.ipynb",
+         "time_cost": "utils_time.ipynb"}
 
 modules = ["engineering/nbdev.py",
            "active_learning.py",
@@ -36,7 +37,8 @@ modules = ["engineering/nbdev.py",
            "engineering/snorkel.py",
            "utils/functools.py",
            "utils/json.py",
-           "utils/pickle.py"]
+           "utils/pickle.py",
+           "utils/time.py"]
 
 doc_url = "https://ian.github.io/mylib/"
 
