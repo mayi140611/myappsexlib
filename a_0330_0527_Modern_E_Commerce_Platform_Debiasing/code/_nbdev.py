@@ -7,10 +7,25 @@ index = {"get_user_data": "0EDA.ipynb",
          "load_whole_click_data": "0EDA.ipynb",
          "load_click_data_per_phase": "0EDA.ipynb",
          "parser": "config.ipynb",
-         "args": "config.ipynb"}
+         "args": "config.ipynb",
+         "trace": "rank.ipynb",
+         "val1": "rank.ipynb",
+         "all_click_df": "rank.ipynb",
+         "item_feat": "rank.ipynb",
+         "phase": "rank.ipynb",
+         "match_num": "rank.ipynb",
+         "load_match_items": "rank.ipynb",
+         "data_preporcess": "rank.ipynb",
+         "get_model_input": "rank.ipynb",
+         "get_model": "rank.ipynb",
+         "df": "rank.ipynb",
+         "fe": "rank.ipynb",
+         "r": "rank.ipynb",
+         "model": "rank.ipynb"}
 
 modules = ["eda.py",
-           "config.py"]
+           "config.py",
+           "rank.py"]
 
 doc_url = "https://ian.github.io/code/"
 
