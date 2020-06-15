@@ -7,7 +7,7 @@ __all__ = ['parser', 'args']
 import argparse
 
 parser = argparse.ArgumentParser(description='t')
-parser.add_argument('--now_phase', type=int, default=6, help='')
+parser.add_argument('--now_phase', type=int, default=9, help='')
 parser.add_argument('--window', type=int, default=10, help='cocur_matr的时间窗')
 parser.add_argument('--time_decay', type=float, default=7/8, help='时间衰减')
 parser.add_argument('--submit_fp', type=str, default='/Users/luoyonggui/Downloads/baseline1_itemcf4.csv', help='提交文件生成位置')

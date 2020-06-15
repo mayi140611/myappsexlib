@@ -3,29 +3,47 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"get_user_data": "0EDA.ipynb",
-         "get_item_data": "0EDA.ipynb",
+         "get_item_data": "recall_rank.ipynb",
          "load_whole_click_data": "0EDA.ipynb",
-         "load_click_data_per_phase": "0EDA.ipynb",
+         "load_click_data_per_phase": "recall_rank.ipynb",
          "parser": "config.ipynb",
          "args": "config.ipynb",
-         "trace": "rank.ipynb",
+         "trace": "recall_rank.ipynb",
          "val1": "rank.ipynb",
          "all_click_df": "rank.ipynb",
          "item_feat": "rank.ipynb",
          "phase": "rank.ipynb",
          "match_num": "rank.ipynb",
          "load_match_items": "rank.ipynb",
-         "data_preporcess": "rank.ipynb",
-         "get_model_input": "rank.ipynb",
-         "get_model": "rank.ipynb",
+         "data_preporcess": "recall_rank.ipynb",
+         "get_model_input": "recall_rank.ipynb",
+         "get_model": "recall_rank.ipynb",
          "df": "rank.ipynb",
-         "fe": "rank.ipynb",
-         "r": "rank.ipynb",
-         "model": "rank.ipynb"}
+         "fe": "recall_rank.ipynb",
+         "r": "recall_from_itemcf_op.ipynb",
+         "model": "rank.ipynb",
+         "load_match_items789": "recall_rank.ipynb",
+         "load_co_occurance_matrix": "rank.ipynb",
+         "rp": "rank.ipynb",
+         "get_sim_item": "recall_from_itemcf_op.ipynb",
+         "recommend": "recall_from_itemcf_op.ipynb",
+         "get_predict": "recall_from_itemcf_op.ipynb",
+         "now_phase": "recall_from_itemcf_op.ipynb",
+         "train_path": "recall_from_itemcf_op.ipynb",
+         "test_path": "recall_from_itemcf_op.ipynb",
+         "whole_click": "recall_from_itemcf_op.ipynb",
+         "PickleWrapper": "recall_rank.ipynb",
+         "build_co_occurance_matrix": "recall_rank.ipynb",
+         "recall_from_cocur_matr": "recall_rank.ipynb",
+         "recall_from_bipartite_network": "recall_rank.ipynb",
+         "recall_from_word2vec": "recall_rank.ipynb",
+         "t": "recall_rank.ipynb"}
 
 modules = ["eda.py",
            "config.py",
-           "rank.py"]
+           "rank.py",
+           "recall_from_itemcf_op.py",
+           "recall_rank.py"]
 
 doc_url = "https://ian.github.io/code/"
 
