@@ -79,7 +79,7 @@ pycodestyle==2.5.0
 pycparser==2.19
 pyflakes==2.1.1
 PyGetWindow==0.0.8
-Pygments==2.4.2
+Pygments==2.7.4
 pylint==2.3.1
 PyMsgBox==1.0.8
 PyMySQL==0.9.3
